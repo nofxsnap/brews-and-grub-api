@@ -38,12 +38,15 @@ ActiveRecord::Schema.define(version: 2019_10_26_154306) do
     t.string "zip_code"
     t.string "state"
     t.string "image_url"
-    t.integer "price_range"
+    t.string "price_range"
     t.json "food"
     t.string "url"
-    t.integer "stars"
+    t.decimal "rating"
+    t.integer "review_count"
+    t.string "display_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  
   end
 
   add_foreign_key "beers", "breweries"

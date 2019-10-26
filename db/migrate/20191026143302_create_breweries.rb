@@ -12,7 +12,10 @@ class CreateBreweries < ActiveRecord::Migration[5.2]
       t.integer :price_range
       t.json :food
       t.string :url
-      t.integer :stars
+      t.decimal :rating
+      t.integer :review_count
+      t.string :price_range
+      t.string :display_phone
 
       t.timestamps
     end
