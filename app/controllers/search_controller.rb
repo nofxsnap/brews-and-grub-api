@@ -25,6 +25,7 @@ class SearchController < ApplicationController
     filtered_breweries.each do |brewery|
       brews_and_food << {
         brewery: brewery,
+        beers: brewery.beers,
         food_truck: brewery.food_trucks.where(food_truck_type: params[:food]).first
       }
     end
