@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_143302) do
+ActiveRecord::Schema.define(version: 2019_10_26_145007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_10_26_143302) do
     t.integer "stars"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_range"
+    t.json "beers"
   end
 
 end
