@@ -2,9 +2,48 @@ task import_breweries: :environment do
     puts "starting the brewery import"
     
     beer_types = [
-      'IPA',
-      'Lager',
-      'Amber'
+      'Amber ale',
+      'Barley wine',
+      'Berliner Weisse',
+      'Bière de Garde',
+      'Bitter',
+      'Blonde Ale',
+      'Bock',
+      'Brown ale',
+      'California Common/Steam Beer',
+      'Cream Ale',
+      'Dortmunder Export',
+      'Doppelbock',
+      'Dunkel',
+      'Dunkelweizen',
+      'Eisbock',
+      'Flanders red ale',
+      'Golden/Summer ale',
+      'Gose',
+      'Gueuze',
+      'Hefeweizen',
+      'Helles',
+      'India pale ale',
+      'Kolsch',
+      'Lambic',
+      'Light ale',
+      'Maibock/Helles bock',
+      'Malt liquor',
+      'Mild',
+      'Oktoberfest',
+      'Old ale',
+      'Oud bruin',
+      'Pale ale',
+      'Pilsener ',
+      'Porter',
+      'Red ale',
+      'Roggenbier',
+      'Saison',
+      'Scotch ale',
+      'Stout',
+      'Schwarzbier',
+      'Vienna lager',
+      'Witbier'
     ]
 
     # connect to yelp api
@@ -13,35 +52,35 @@ task import_breweries: :environment do
 
     # loop through each business and create breweries
     businesses.each do |business|
-        brewery = Brewery.create!(
-            name: business['name'], 
-            street: business['location']['address1'] , 
-            city: business['location']['city'], 
-            state: business['location']['state'], 
-            zip_code: business['location']['zip_code'], 
-            url: business['url'],
-            review_count: business['review_count'],
-            rating: business['rating'],
-            price_range: business['price'],
-            display_phone: business['display_phone'],
-            latitude: business['coordinates']['latitude'],
-            longitude: business['coordinates']['longitude'],
-            image_url: business['image_url']
-        )
-        puts "created #{brewery.name}"
+      brewery = Brewery.create!(
+          name: business['name'], 
+          street: business['location']['address1'] , 
+          city: business['location']['city'], 
+          state: business['location']['state'], 
+          zip_code: business['location']['zip_code'], 
+          url: business['url'],
+          review_count: business['review_count'],
+          rating: business['rating'],
+          price_range: business['price'],
+          display_phone: business['display_phone'],
+          latitude: business['coordinates']['latitude'],
+          longitude: business['coordinates']['longitude'],
+          image_url: business['image_url']
+      )
+      puts "created #{brewery.name}"
 
-        rand(5..10).times do |i|
-          beer = brewery.beers.create!(
-            name: "Beer #{i}", 
-            beer_type: beer_types.sample, 
-            beer_sub_type: beer_types.sample, 
-            ounces: 16, 
-            ibu: rand(70..100), 
-            abv: rand(4..12),
-            price: rand(4..8)
-          )
-          puts "created #{beer.name}"
-        end
+      rand(5..10).times do |i|
+        beer = brewery.beers.create!(
+          name: "Beer #{i}", 
+          beer_type: beer_types.sample, 
+          beer_sub_type: beer_types.sample, 
+          ounces: 16, 
+          ibu: rand(70..100), 
+          abv: rand(4..12),
+          price: rand(4..8)
+        )
+        puts "created #{beer.name}"
+      end
     end
 
 end
