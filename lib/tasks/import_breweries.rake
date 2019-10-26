@@ -25,7 +25,7 @@ task import_breweries: :environment do
     beer_descriptors = ['American','Adventurous','Award-winning','Balanced','Best',
     'Big','Bitter','Bold','Bottle-conditioned','Bright','Cask-conditioned','Classic',
     'Clean','Limited','Lively','Lush','Malty','Mellow','Natural','Organic','Original',
-    'Pale','Drinkable',,'Dry','Dry-hopped','Elastic','Elegant','Exceptional',
+    'Pale','Drinkable','Dry','Dry-hopped','Elastic','Elegant','Exceptional',
     'Exotic','Famous','Favorite','Flavorful','Flawless','Floral','Fresh', 'Frothy',
     'Full','Full-flavored','Handcrafted','Pioneer','Premium','Strong','Sturdy','Superior',
     'The Original','Thick','Traditional','Unfiltered','Unforgettable','Unique','Velvety',
