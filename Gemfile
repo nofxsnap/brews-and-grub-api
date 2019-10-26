@@ -14,6 +14,7 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'
+  gem 'pry-nav'
 end
 
 group :development do
