@@ -10,6 +10,8 @@ gem 'olive_branch'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rest-client'
+gem 'rack-cors'
+
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'
