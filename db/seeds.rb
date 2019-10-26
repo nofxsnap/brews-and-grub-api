@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Brewery.create!(name: 'Denver Beer Co', url: 'http://denverbeerco.com/on-tap-today/')
+Brewery.create!(name: "Denver Beer Co", street: "4455 Jason St.", city: "Denver", state: "CO", zip_code: "80211", url: "http://denverbeerco.com/")
+Brewery.create!(name: "Left Hand Brewing Co", street: "", city: "Longmont", state: "CO", zip_code: "", url: "http://lefthandbrewing.com/")

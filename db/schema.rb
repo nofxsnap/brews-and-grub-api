@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2019_10_26_145007) do
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
-    t.decimal "lat"
-    t.decimal "lng"
-    t.string "street_address"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "street"
     t.string "city"
     t.string "zip_code"
     t.string "state"
