@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_154306) do
+ActiveRecord::Schema.define(version: 2019_10_26_194640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,5 +48,19 @@ ActiveRecord::Schema.define(version: 2019_10_26_154306) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "food_trucks", force: :cascade do |t|
+    t.string "name"
+    t.string "food_truck_type"
+    t.string "url"
+    t.string "image_url"
+    t.string "price_range"
+    t.json "menu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "brewery_id"
+    t.index ["brewery_id"], name: "index_food_trucks_on_brewery_id"
+  end
+
   add_foreign_key "beers", "breweries"
+  add_foreign_key "food_trucks", "breweries"
 end
