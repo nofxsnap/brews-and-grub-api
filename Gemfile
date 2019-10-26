@@ -9,7 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'olive_branch'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'geocoder'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'
