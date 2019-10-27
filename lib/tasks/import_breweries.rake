@@ -20,7 +20,7 @@ task import_breweries: :environment do
     'Crazy Ivan', 'Vanilla Ice', 'Vampire Blood', 'Evil Dead', ' Baron Von Awesome',
     'Blithering Idiot', 'Substance Abuse', 'The Dude’s Oat Soda', 'Badonk-A-Dunkel', 
     'Smells Like Weed', 'Donkey Punch', 'Nut Sack', 
-    'Up Up Down Down Left Right Left Right BA Select' ]
+    'Up Up Down Down Left Right Left Right BA Select']
 
     beer_descriptors = ['American','Adventurous','Award-winning','Balanced','Best',
     'Big','Bitter','Bold','Bottle-conditioned','Bright','Cask-conditioned','Classic',
@@ -65,11 +65,11 @@ task import_breweries: :environment do
 
       rand(5..10).times do |i|
         beer = brewery.beers.create!(
-          name: beer_names.sample, 
-          beer_sub_type: beer_descriptors.sample, 
-          beer_type: beer_types.sample, 
-          ounces: 16, 
-          ibu: rand(70..100), 
+          name: beer_names.sample,
+          beer_sub_type: beer_descriptors.sample,
+          beer_type: beer_types.sample,
+          ounces: 16,
+          ibu: rand(70..100),
           abv: rand(4..12),
           price: rand(4..8)
         )
