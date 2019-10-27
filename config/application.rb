@@ -35,8 +35,14 @@ module BrewsAndGrubApi
     config.middleware.use OliveBranch::Middleware
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*',
-        headers: :any
+        origins 'localhost:3000',
+                'localhost:3001',
+                'https://jolly-mccarthy-e82c0d.netlify.com/'
+        resource '*',
+                 headers: :any,
+                 expose:  ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+                 methods: %i[get post put patch delete options],
+                 max_age: 2_592_000 # 30 days
       end
     end
   end
