@@ -35,9 +35,7 @@ module BrewsAndGrubApi
     config.middleware.use OliveBranch::Middleware
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:3000',
-                'localhost:3001',
-                'https://jolly-mccarthy-e82c0d.netlify.com/'
+        origins '*'
         resource '*',
                  headers: :any,
                  expose:  ['access-token', 'expiry', 'token-type', 'uid', 'client'],
